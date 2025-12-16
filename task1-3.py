@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from collections import deque
 
-# 1. Створюємо неорієнтований граф міських доріг
+# Створюємо неорієнтований граф міських доріг
 G = nx.Graph()
 
 # Перехрестя (райони міста)
@@ -25,7 +25,7 @@ G.add_edge("Ринок", "Парк",  weight=6)
 G.add_edge("Торгівельний центр", "Парк", weight=8)
 G.add_edge("Річковий вокзал", "Парк", weight=5)
 
-# 2. Базові характеристики
+# Базові характеристики
 print("Кількість вершин:", G.number_of_nodes())
 print("Кількість ребер:", G.number_of_edges())
 
@@ -83,7 +83,7 @@ for source in G.nodes():
         dist = all_shortest_lengths[source][target]
         print(f"  до '{target}': шлях = {path}, довжина = {dist}")
 
-# 3. Візуалізація
+# Візуалізація
 pos = nx.spring_layout(G, seed=42)  # зручне розташування вершин
 plt.figure(figsize=(8, 6))
 nx.draw(
